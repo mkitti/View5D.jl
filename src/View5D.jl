@@ -151,7 +151,7 @@ julia> v3 = view5d(img3);
 function view5d(myArray :: AbstractArray, exitingViewer=nothing, gamma=nothing)
         if ! JavaCall.isloaded()
             # JavaCall.init(["-Djava.class.path=$(joinpath(@__DIR__, "View5D.jl","AllClasses"))"])
-            myPath = ["-Djava.class.path=$(joinpath(@__DIR__, "jars","View5D.jar"))"]
+            myPath = ["-Djava.class.path=$(joinpath(dirname(@__DIR__), "jars","View5D.jar"))"]
             @show myPath
             JavaCall.init(myPath)
             # JavaCall.init(["-Djava.class.path=$(joinpath(@__DIR__, "jars","view5d"))"])
